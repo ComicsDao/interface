@@ -1,6 +1,9 @@
 /** @type {import('tailwindcss').Config} */
 module.exports = {
-  content: ["./pages/*/.{js,ts,jsx,tsx}", "./components/*/.{js,ts,jsx,tsx}"],
+  content: [
+    "./pages/**/*.{js,ts,jsx,tsx}",
+    "./components/**/*.{js,ts,jsx,tsx}"
+  ],
   theme: {
     colors: {
       black: {
@@ -17,11 +20,9 @@ module.exports = {
       red: "#D63C5E",
       orange: "#F99042"
     },
-    extend: {
-      fontFamily: {
-        ubuntu: ["Ubuntu", "sans-serif"],
-        londrina: ["Londrina Solid", "cursive"]
-      }
+    fontFamily: {
+      ubuntu: ["Ubuntu", "sans-serif"],
+      londrina: ["Londrina Solid", "cursive"]
     }
   },
   plugins: [require("tailwindcss"), require("autoprefixer")]
