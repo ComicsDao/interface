@@ -1,8 +1,52 @@
 import type { NextPage } from "next"
 import Head from "next/head"
-import Image from "next/image"
+import { DoubleText } from "../components/ui"
+import { useEffect } from "react"
+import { timeline } from "motion"
+import { TimelineDefinition } from "@motionone/dom/types/timeline/types"
 
 const Home: NextPage = () => {
+  // Animation
+  useEffect(() => {
+    const sequence = [
+      [
+        ".animate-bouncy",
+        {
+          transform: [
+            "scale(4)",
+            "scale(1)",
+            "scale(1.6)",
+            "scale(1.1)",
+            "scale(1.2)",
+            "scale(1)"
+          ]
+        },
+        { offset: [0, 0.3, 0.5, 0.7, 0.8, 0.9, 1], duration: 0.8 }
+      ],
+      [
+        ".yellow-circle",
+        { opacity: 1, transform: "scale(30)" },
+        { duration: 0.4 }
+      ],
+      [".double-text", { opacity: 0 }],
+      [".main-animation-box", { opacity: 0 }],
+      [
+        ".yellow-circle",
+        { opacity: 0, transform: "scale(0)" },
+        { duration: 0.6 }
+      ],
+      [
+        ".yellow-circle",
+        { opacity: 1, transform: "scale(30)" },
+        { duration: 0.4 }
+      ]
+    ] as TimelineDefinition
+
+    const animationTimeline = timeline(sequence)
+
+    return () => animationTimeline.cancel()
+  }, [])
+
   return (
     <div>
       <Head>
@@ -11,8 +55,18 @@ const Home: NextPage = () => {
         <link rel="icon" href="/favicon.ico" />
       </Head>
 
-      <main>
-        <h1 className="font-londrina">Welcome to Comics Dao</h1>
+      <main className="flex items-center justify-center h-screen overflow-hidden bg-white main-animation-box">
+        <div className="animate-bouncy">
+          <DoubleText text="POW" className="-rotate-12 double-text" />
+        </div>
+        <div className="absolute w-16 h-16 -translate-x-1/2 -translate-y-1/2 bg-yellow-100 rounded-full opacity-0 top-1/2 left-1/2 yellow-circle"></div>
+        {/* <div className="h-[calc(100vh-95px)] opacity-0">
+          <p className="md:text-[20rem] font-londrina text-9xl">
+            NOUNS
+            <br />
+            COMICS
+          </p>
+        </div> */}
       </main>
     </div>
   )

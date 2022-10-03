@@ -16,7 +16,7 @@ const Navbar = () => {
           <span className="h-[2px] w-full bg-black-100 absolute rounded top-[50%]"></span>
           <span className="h-[2px] w-full bg-black-100 absolute rounded bottom-0"></span>
         </div>
-        <ul className="absolute bg-black-100 w-full px-[20px] py-[40px] h-[95px] flex justify-between items-center left-0 -bottom-full">
+        {/* <ul className="absolute bg-black-100 w-full px-[20px] py-[40px] h-[95px] flex justify-between items-center left-0 -bottom-full">
           <li>
             <a>Support</a>
           </li>
@@ -26,7 +26,7 @@ const Navbar = () => {
           <li>
             <a>Contact</a>
           </li>
-        </ul>
+        </ul> */}
       </div>
     </div>
   )
