@@ -6,7 +6,9 @@ function MyApp({ Component, pageProps }: AppProps) {
   return (
     <div className="max-w-screen-2xl m-auto">
       <Navbar />
-      <Component {...pageProps} />
+      <div className=" pt-[95px]">
+        <Component {...pageProps} />
+      </div>
     </div>
   )
 }
