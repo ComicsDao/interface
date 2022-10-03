@@ -2,20 +2,22 @@
 
 .link_after {
   &:after {
-    content: "";
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    width: 100%;
-    height: 20px;
-    transform: scaleY(0.1);
-    transform-origin: bottom center;
-    background: #333;
-    z-index: -1;
-    transition-property: all;
-    transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
-    transition-duration: 150ms;
-    border-radius: 5px;
+    @include mixins.respond(tab) {
+      content: "";
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 100%;
+      height: 20px;
+      transform: scaleY(0.1);
+      transform-origin: bottom center;
+      background: #333;
+      z-index: -1;
+      transition-property: all;
+      transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+      transition-duration: 150ms;
+      border-radius: 5px;
+    }
   }
   &:hover {
     color: #fff;
@@ -23,7 +25,7 @@
     transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
     transition-duration: 150ms;
     &::after {
-      @include mixins.respond(desktop) {
+      @include mixins.respond(tab) {
         transform: scaleY(1);
         height: 100%;
       }
