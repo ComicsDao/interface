@@ -106,8 +106,8 @@ const Home: NextPage = () => {
           </div>
         </div>
       </main>
-      <div className="absolute flex justify-end mt-8 opacity-0 cursor-pointer animate-bounce arrow-box bottom-20 left-1/2">
-        <a className="bg-yellow-100 lg:hover:bg-orange border-solid border-2 border-black-100 h-[50px] w-[50px] flex items-center justify-center rounded-full p-3">
+      <div className="absolute flex justify-end mt-8 opacity-0 animate-bounce arrow-box bottom-10 lg:bottom-20 left-1/2">
+        <a className="bg-yellow-100 lg:hover:bg-orange -translate-x-1/2 cursor-pointer border-solid border-2 border-black-100 h-[50px] w-[50px] flex items-center justify-center rounded-full p-3">
           <Image src={arrow} alt="arrow down" height={20} width={20} />
         </a>
       </div>
