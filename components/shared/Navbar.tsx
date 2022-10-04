@@ -8,9 +8,10 @@ const Navbar = () => {
   const hendelClick = () => {
     setIsOpen(!isOpen)
   }
-  useEffect(() => {
-    scroll(animate(".navbar-scroll", { zIndex: 20 }))
-  })
+
+  // useEffect(() => {
+  //   scroll(animate(".navbar-scroll", { zIndex: 10 }))
+  // })
 
   return (
     <div className="max-w-screen-2xl fixed w-full h-[95px] border-yellow-100	border-solid	border-b-2 md:px-[40px] md:flex justify-between items-center bg-white navbar-scroll">

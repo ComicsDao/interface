@@ -36,8 +36,6 @@ export const ScreenSizeProvider = ({ children }: { children: any }) => {
       ? "tablet"
       : "desktop"
 
-  console.log(screenSize)
-
   return (
     <ScreenSizeContext.Provider value={{ screenSize }}>
       {children}
