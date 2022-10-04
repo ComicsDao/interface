@@ -9,11 +9,11 @@ const Navbar = () => {
   return (
     <div className="max-w-screen-2xl fixed w-full h-[95px] border-yellow-100	border-solid	border-b-2 md:px-[40px] md:flex justify-between items-center bg-white">
       <div className="h-full bg-white flex justify-between items-center z-10 relative px-[20px] md:px-0">
-        <p className="text-black-100 flex flex-col">
-          <span className="font-londrina font-normal text-4xl">
+        <p className="flex flex-col text-black-100">
+          <span className="text-4xl font-normal font-londrina">
             NOUNS COMICS
           </span>
-          <span className="font-ubuntu font-light text-xs">
+          <span className="text-xs font-light font-ubuntu">
             Powered by ComicsDAO
           </span>
         </p>
