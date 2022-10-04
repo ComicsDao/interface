@@ -1,13 +1,15 @@
 import type { NextPage } from "next"
 import Head from "next/head"
-import { DoubleText } from "../components/ui"
+import { DoubleText, Carousel, CarouselMd, CarouselLg } from "../components/ui"
 import { useEffect } from "react"
 import { timeline } from "motion"
 import { TimelineDefinition } from "@motionone/dom/types/timeline/types"
 import arrow from "public/img/icon/arrow.svg"
 import Image from "next/image"
+import { useScreenSize } from "provider/ScreenSizeProvider"
 
 const Home: NextPage = () => {
+  const { screenSize } = useScreenSize()
   // Animation
   useEffect(() => {
     const sequence = [
@@ -107,9 +109,17 @@ const Home: NextPage = () => {
         </div>
       </main>
       <div className="absolute flex justify-end mt-8 opacity-0 animate-bounce arrow-box bottom-10 lg:bottom-20 left-1/2">
-        <a className="bg-yellow-100 lg:hover:bg-orange -translate-x-1/2 cursor-pointer border-solid border-2 border-black-100 h-[50px] w-[50px] flex items-center justify-center rounded-full p-3">
+        <a
+          href="#box-carousels"
+          className="bg-yellow-100 lg:hover:bg-orange -translate-x-1/2 cursor-pointer border-solid border-2 border-black-100 h-[50px] w-[50px] flex items-center justify-center rounded-full p-3"
+        >
           <Image src={arrow} alt="arrow down" height={20} width={20} />
         </a>
+      </div>
+      <div id="box-carousels" className="pt-[95px]">
+        {screenSize === "mobile" && <Carousel />}
+        {screenSize === "tablet" && <CarouselMd />}
+        {screenSize === "desktop" && <CarouselLg />}
       </div>
     </>
   )
