@@ -7,7 +7,7 @@ import { useState } from "react"
 import { timeline } from "motion"
 import { TimelineDefinition } from "@motionone/dom/types/timeline/types"
 
-const CarouselLg = () => {
+const CarouselLg = ({ onClick }) => {
   const [activeCard, setActiveCard] = useState(2)
 
   const handleCarousel = (number: number) => {
@@ -23,17 +23,15 @@ const CarouselLg = () => {
     const zIndex1 = { zIndex: 10 }
     const zIndex2 = { zIndex: 0 }
     const blockText = {
-      opacity: 1,
       position: "relative",
-      left: 0,
-      transform: "scale(1)"
+      left: 0
     }
     const hiddenText = {
-      opacity: 0,
       position: "absolute",
-      left: "100%",
-      transform: "scale(.5)"
+      left: "100%"
     }
+    const opacity1Text = { opacity: 1 }
+    const opacity0Text = { opacity: 0 }
 
     const sequence = [
       [
@@ -49,6 +47,40 @@ const CarouselLg = () => {
         number === 1 ? position2 : position1,
         {
           duration: 1,
+          easing: "ease-in-out",
+          at: 0
+        }
+      ],
+      [
+        ".text-animation-1",
+        number === 1 ? opacity1Text : opacity0Text,
+        {
+          duration: 0.2,
+          at: 0
+        }
+      ],
+      [
+        ".text-animation-2",
+        number === 1 ? opacity0Text : opacity1Text,
+        {
+          duration: 0.2,
+          at: 0
+        }
+      ],
+      [
+        ".text-animation-1",
+        number === 1 ? blockText : hiddenText,
+        {
+          duration: 0.5,
+          easing: "ease-in-out",
+          at: 0
+        }
+      ],
+      [
+        ".text-animation-2",
+        number === 1 ? hiddenText : blockText,
+        {
+          duration: 0.5,
           easing: "ease-in-out",
           at: 0
         }
@@ -93,23 +125,45 @@ const CarouselLg = () => {
             some useful information which concerns the project.
           </p>
         </div>
-        <div>
-          <h3 className="font-normal text-3xl mb-[20px]">Generative Cover 1</h3>
-          <p className="font-light text-sm italic text-black-200 leading-6 mb-6">
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam
-            imperdiet, sapien at vestibulum ullamcorper, sapien lectus bibendum
-            ex, sit amet vehicula leo dui eget odio. Aliquam erat volutpat. 1111
-          </p>
-          <a className=" w-2/3 font-ubuntu font-normal text-base bg-yellow-100 border-solid border-2 border-black-100 flex items-center justify-center rounded-full px-14 py-3 hover:bg-orange cursor-pointer transition-all">
-            <Image
-              src={iconCart}
-              alt="icon cart"
-              height={20}
-              width={20}
-              className="mr-3"
-            />
-            Buy It
-          </a>
+        <div className="relative overflow-hidden">
+          <div className="text-animation-1">
+            <h3 className="font-normal text-3xl mb-[20px]">
+              Generative Cover 1
+            </h3>
+            <p className="font-light text-sm italic text-black-200 leading-6 mb-6">
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam
+              imperdiet, sapien at vestibulum ullamcorper, sapien lectus
+              bibendum ex, sit amet vehicula leo dui eget odio. Aliquam erat
+              volutpat. 1111
+            </p>
+            <a className=" w-2/3 font-ubuntu font-normal text-base bg-yellow-100 border-solid border-2 border-black-100 flex items-center justify-center rounded-full px-14 py-3 hover:bg-orange cursor-pointer transition-all">
+              <Image
+                src={iconCart}
+                alt="icon cart"
+                height={20}
+                width={20}
+                className="mr-3"
+              />
+              Buy It
+            </a>
+          </div>
+          <div className=" absolute left-full opacity-0 text-animation-2">
+            <h3 className="font-normal text-3xl mb-[20px]">
+              Generative Cover 2
+            </h3>
+            <p className="font-light text-sm italic text-black-200 leading-6 mb-6">
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam
+              imperdiet, sapien at vestibulum ullamcorper, sapien lectus
+              bibendum ex, sit amet vehicula leo dui eget odio. Aliquam erat
+              volutpat. 222
+            </p>
+            <a
+              className=" w-2/3 font-ubuntu font-normal text-base bg-yellow-100 border-solid border-2 border-black-100 flex items-center justify-center rounded-full px-14 py-3 hover:bg-orange cursor-pointer transition-all"
+              onClick={onClick}
+            >
+              Read Comics
+            </a>
+          </div>
         </div>
       </div>
       <div className="w-1/2 flex items-center overflow-hidden relative h-[600px] ml-[50px]">
