@@ -1,7 +1,13 @@
 import type { NextPage } from "next"
 import Head from "next/head"
-import { DoubleText, Carousel, CarouselMd, CarouselLg } from "../components/ui"
-import { useEffect } from "react"
+import {
+  DoubleText,
+  CarouselSm,
+  CarouselMd,
+  CarouselLg,
+  CarouselFull
+} from "../components/ui"
+import { useEffect, useState } from "react"
 import { timeline } from "motion"
 import { TimelineDefinition } from "@motionone/dom/types/timeline/types"
 import arrow from "public/img/icon/arrow.svg"
@@ -9,6 +15,11 @@ import Image from "next/image"
 import { useScreenSize } from "provider/ScreenSizeProvider"
 
 const Home: NextPage = () => {
+  const [isOpen, setIsOpen] = useState(true)
+  const hendelClick = () => {
+    setIsOpen(isOpen == false ? true : false)
+  }
+
   const { screenSize } = useScreenSize()
   // Animation
   useEffect(() => {
@@ -117,9 +128,10 @@ const Home: NextPage = () => {
         </a>
       </div>
       <div id="box-carousels" className="pt-[95px]">
-        {screenSize === "mobile" && <Carousel />}
-        {screenSize === "tablet" && <CarouselMd />}
-        {screenSize === "desktop" && <CarouselLg />}
+        {screenSize === "mobile" && <CarouselSm onClick={hendelClick} />}
+        {screenSize === "tablet" && <CarouselMd onClick={hendelClick} />}
+        {screenSize === "desktop" && <CarouselLg onClick={hendelClick} />}
+        <CarouselFull onClick={hendelClick} isOpen={isOpen} />
       </div>
     </>
   )

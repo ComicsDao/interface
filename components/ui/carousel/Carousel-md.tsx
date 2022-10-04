@@ -5,7 +5,7 @@ import iconCart from "public/img/icon/icon-cart.png"
 import { timeline } from "motion"
 import { TimelineDefinition } from "@motionone/dom/types/timeline/types"
 
-const CarouselMd = () => {
+const CarouselMd = (onClick) => {
   const handleCarousel = (number: number) => {
     const position1 = { left: 0, width: "400px", height: "590px" }
     const position2 = {
@@ -161,7 +161,10 @@ const CarouselMd = () => {
               volutpat. 2222
             </p>
             <div className=" flex justify-end">
-              <a className=" font-ubuntu font-normal text-lg bg-yellow-100 border-solid border-2 border-black-100 min-h-[50px] min-w-[50px] flex items-center justify-center rounded-full px-6 py-3">
+              <a
+                className=" font-ubuntu font-normal text-lg bg-yellow-100 border-solid border-2 border-black-100 min-h-[50px] min-w-[50px] flex items-center justify-center rounded-full px-6 py-3"
+                onClick={onClick}
+              >
                 Read Comics
               </a>
             </div>
