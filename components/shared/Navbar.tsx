@@ -1,13 +1,19 @@
 import { useState } from "react"
 import style from "styles/shared/navbar.module.scss"
+import { useEffect } from "react"
+import { animate, scroll } from "motion"
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false)
   const hendelClick = () => {
     setIsOpen(!isOpen)
   }
+  useEffect(() => {
+    scroll(animate(".navbar-scroll", { zIndex: 20 }))
+  })
+
   return (
-    <div className="max-w-screen-2xl fixed w-full h-[95px] border-yellow-100	border-solid	border-b-2 md:px-[40px] md:flex justify-between items-center bg-white">
+    <div className="max-w-screen-2xl fixed w-full h-[95px] border-yellow-100	border-solid	border-b-2 md:px-[40px] md:flex justify-between items-center bg-white navbar-scroll">
       <div className="h-full bg-white flex justify-between items-center z-10 relative px-[20px] md:px-0">
         <p className="flex flex-col text-black-100">
           <span className="text-4xl font-normal font-londrina">
