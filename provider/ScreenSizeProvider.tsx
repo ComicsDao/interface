@@ -1,22 +1,27 @@
 import React, { useState, useEffect, createContext, useContext } from "react"
 
-const ScreenSizeContext = createContext()
+interface ScreenContextInterface {
+  screenSize: string
+}
+
+const ScreenSizeContext = createContext<ScreenContextInterface | null>(null)
 
 export const ScreenSizeProvider = ({ children }: { children: any }) => {
   const [windowSize, setWindowSize] = useState({
     width: 0
   })
 
+  function handleResize() {
+    // Set window width/height to state
+    setWindowSize({
+      width: window.outerWidth
+    })
+  }
+
   useEffect(() => {
     // only execute all the code below in client side
     if (typeof window !== "undefined") {
       // Handler to call on window resize
-      function handleResize() {
-        // Set window width/height to state
-        setWindowSize({
-          width: window.outerWidth
-        })
-      }
 
       // Add event listener
       window.addEventListener("resize", handleResize)

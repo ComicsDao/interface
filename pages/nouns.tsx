@@ -12,7 +12,7 @@ import { timeline } from "motion"
 import { TimelineDefinition } from "@motionone/dom/types/timeline/types"
 import arrow from "public/img/icon/arrow.svg"
 import Image from "next/image"
-import { useScreenSize } from "provider/ScreenSizeProvider"
+import { useScreenSize } from "../provider/ScreenSizeProvider"
 
 const Home: NextPage = () => {
   const [isOpen, setIsOpen] = useState(true)
