@@ -1,17 +1,11 @@
 import { useState } from "react"
 import style from "styles/shared/navbar.module.scss"
-import { useEffect } from "react"
-import { animate, scroll } from "motion"
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false)
   const hendelClick = () => {
     setIsOpen(!isOpen)
   }
-
-  // useEffect(() => {
-  //   scroll(animate(".navbar-scroll", { zIndex: 10 }))
-  // })
 
   return (
     <div className="max-w-screen-2xl fixed w-full h-[95px] border-yellow-100	border-solid	border-b-2 md:px-[40px] md:flex justify-between items-center bg-white navbar-scroll">
