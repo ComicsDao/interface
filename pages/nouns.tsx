@@ -2,10 +2,9 @@ import type { NextPage } from "next"
 import Head from "next/head"
 import {
   DoubleText,
-  CarouselSm,
-  CarouselMd,
-  CarouselLg,
-  ComicsViewer
+  ComicsCarousel,
+  ComicsViewer,
+  CarouselLg
 } from "../components/ui"
 import React, { useEffect, useState } from "react"
 import { timeline } from "motion"
@@ -140,15 +139,8 @@ const Home: NextPage = ({ comics }) => {
       <div id="box-carousels" className="pt-[95px]">
         {comics.map((comic, index) => (
           <React.Fragment key={index}>
-            {screenSize === "mobile" && (
-              <CarouselSm onClick={handleClick} comic={comic} />
-            )}
-            {screenSize === "tablet" && (
-              <CarouselMd onClick={handleClick} comic={comic} />
-            )}
-            {screenSize === "desktop" && (
-              <CarouselLg onClick={handleClick} comic={comic} />
-            )}
+            <ComicsCarousel onClick={handleClick} comic={comic} />
+            {/* <CarouselLg onClick={handleClick} comic={comic} /> */}
             <ComicsViewer onClick={handleClick} comic={comic} isOpen={isOpen} />
           </React.Fragment>
         ))}
