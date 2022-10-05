@@ -3,7 +3,7 @@ import arrow from "public/img/icon/arrow.svg"
 import close from "public/img/icon/close.png"
 import carosuelImg from "public/img/carousel_full/1.png"
 
-const CarouselFull = ({ onClick, isOpen }) => {
+const ComicsViewer = ({ onClick, isOpen, comic }) => {
   return (
     <div
       className={`fixed z-30 backdrop-blur left-0 top-0 bottom-0 right-0 h-screen w-screen transition-all ${
@@ -12,7 +12,7 @@ const CarouselFull = ({ onClick, isOpen }) => {
           : " opacity-100 scale-100 z-30"
       }`}
     >
-      <div className="flex items-center justify-center h-full w-full">
+      <div className="flex items-center justify-center w-full h-full">
         <a
           className="absolute top-[30px] right-[20px] md:right-[40px] bg-yellow-100 border-solid border-2 border-black-100 h-[50px] w-[50px] flex items-center justify-center rounded-full p-4 lg:hover:bg-orange cursor-pointer transition-all"
           onClick={onClick}
@@ -22,7 +22,7 @@ const CarouselFull = ({ onClick, isOpen }) => {
             alt="close"
             height={20}
             width={20}
-            className=" rotate-90"
+            className="rotate-90 "
           />
         </a>
         <div className="relative">
@@ -32,7 +32,7 @@ const CarouselFull = ({ onClick, isOpen }) => {
               alt="arrow left"
               height={20}
               width={20}
-              className=" rotate-90"
+              className="rotate-90 "
             />
           </a>
           <div className="w-[85vw] md:w-[60vw] lg:w-[450px]">
@@ -57,4 +57,4 @@ const CarouselFull = ({ onClick, isOpen }) => {
   )
 }
 
-export default CarouselFull
+export default ComicsViewer

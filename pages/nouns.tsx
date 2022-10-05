@@ -5,16 +5,16 @@ import {
   CarouselSm,
   CarouselMd,
   CarouselLg,
-  CarouselFull
+  ComicsViewer
 } from "../components/ui"
-import { useEffect, useState } from "react"
+import React, { useEffect, useState } from "react"
 import { timeline } from "motion"
 import { TimelineDefinition } from "@motionone/dom/types/timeline/types"
 import arrow from "public/img/icon/arrow.svg"
 import Image from "next/image"
 import { useScreenSize } from "../provider/ScreenSizeProvider"
 
-const Home: NextPage = () => {
+const Home: NextPage = ({ comics }) => {
   const [isOpen, setIsOpen] = useState(true)
   const handleClick = () => {
     setIsOpen(isOpen == false ? true : false)
@@ -96,6 +96,8 @@ const Home: NextPage = () => {
     return () => animationTimeline.cancel()
   }, [])
 
+  console.log(comics)
+
   return (
     <>
       <Head>
@@ -136,13 +138,42 @@ const Home: NextPage = () => {
         </a>
       </div>
       <div id="box-carousels" className="pt-[95px]">
-        {screenSize === "mobile" && <CarouselSm onClick={handleClick} />}
-        {screenSize === "tablet" && <CarouselMd onClick={handleClick} />}
-        {screenSize === "desktop" && <CarouselLg onClick={handleClick} />}
-        <CarouselFull onClick={handleClick} isOpen={isOpen} />
+        {comics.map((comic, index) => (
+          <React.Fragment key={index}>
+            {screenSize === "mobile" && (
+              <CarouselSm onClick={handleClick} comic={comic} />
+            )}
+            {screenSize === "tablet" && (
+              <CarouselMd onClick={handleClick} comic={comic} />
+            )}
+            {screenSize === "desktop" && (
+              <CarouselLg onClick={handleClick} comic={comic} />
+            )}
+            <ComicsViewer onClick={handleClick} comic={comic} isOpen={isOpen} />
+          </React.Fragment>
+        ))}
       </div>
     </>
   )
 }
 
 export default Home
+
+export async function getStaticProps() {
+  const baseUrl = process.env.NEXT_PUBLIC_FRONT_URL
+  const apiRes = await fetch(`${baseUrl}/api/nouns-comics`, {
+    method: "GET",
+    headers: {
+      "Content-Type": "application/json"
+    }
+  })
+
+  const res = await apiRes.json()
+
+  return {
+    props: {
+      comics: res.data
+    },
+    revalidate: 60
+  }
+}

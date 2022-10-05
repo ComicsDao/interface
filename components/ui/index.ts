@@ -1,5 +1,5 @@
 export { default as CarouselSm } from "./carousel/Carousel-sm"
 export { default as CarouselMd } from "./carousel/Carousel-md"
 export { default as CarouselLg } from "./carousel/Carousel-lg"
-export { default as CarouselFull } from "./carousel/Carousel-full"
+export { default as ComicsViewer } from "./carousel/ComicsViewer"
 export { default as DoubleText } from "./DoubleText"
