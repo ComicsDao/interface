@@ -1,10 +1,79 @@
 // Fonts //
-@import url("https://fonts.googleapis.com/css2?family=Londrina+Solid:wght@100;300;400&family=Ubuntu:wght@300;400;500;700&display=swap");
+// @import url("https://fonts.googleapis.com/css2?family=Londrina+Solid:wght@100;300;400&family=Ubuntu:wght@300;400;500;700&display=swap");
 
 // Global properties //
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+@font-face {
+  font-family: "Londrina";
+  src: url("../public/fonts/Londrina_Solid/LondrinaSolid-Thin.ttf");
+  font-weight: thin;
+}
+
+@font-face {
+  font-family: "Londrina";
+  src: url("../public/fonts/Londrina_Solid/LondrinaSolid-Light.ttf");
+  font-weight: light;
+}
+
+@font-face {
+  font-family: "Londrina";
+  src: url("../public/fonts/Londrina_Solid/LondrinaSolid-Regular.ttf");
+  font-weight: normal;
+}
+
+@font-face {
+  font-family: "Londrina";
+  src: url("../public/fonts/Londrina_Solid/LondrinaSolid-Black.ttf");
+  font-weight: bold;
+}
+
+@font-face {
+  font-family: "Ubuntu";
+  src: url("../public/fonts/Ubuntu/Ubuntu-Light.ttf");
+  font-weight: light;
+}
+
+@font-face {
+  font-family: "Ubuntu";
+  src: url("../public/fonts/Ubuntu/Ubuntu-LightItalic.ttf");
+  font-weight: light;
+  font-style: italic;
+}
+
+@font-face {
+  font-family: "Ubuntu";
+  src: url("../public/fonts/Ubuntu/Ubuntu-Regular.ttf");
+  font-weight: normal;
+}
+
+@font-face {
+  font-family: "Ubuntu";
+  src: url("../public/fonts/Ubuntu/Ubuntu-Medium.ttf");
+  font-weight: medium;
+}
+
+@font-face {
+  font-family: "Ubuntu";
+  src: url("../public/fonts/Ubuntu/Ubuntu-MediumItalic.ttf");
+  font-weight: medium;
+  font-style: italic;
+}
+
+@font-face {
+  font-family: "Ubuntu";
+  src: url("../public/fonts/Ubuntu/Ubuntu-Bold.ttf");
+  font-weight: bold;
+}
+
+@font-face {
+  font-family: "Ubuntu";
+  src: url("../public/fonts/Ubuntu/Ubuntu-BoldItalic.ttf");
+  font-weight: bold;
+  font-style: italic;
+}
 
 html {
   scroll-behavior: smooth;

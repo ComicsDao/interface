@@ -14,7 +14,7 @@ const ComicsViewer = ({ onClick, isOpen, comic }) => {
     >
       <div className="flex items-center justify-center w-full h-full">
         <a
-          className="absolute top-[30px] right-[20px] md:right-[40px] bg-yellow-100 border-solid border-2 border-black-100 h-[50px] w-[50px] flex items-center justify-center rounded-full p-4 lg:hover:bg-orange cursor-pointer transition-all"
+          className="absolute top-[10px] right-[10px] md:top-[40px] md:right-[40px] bg-yellow-100 border-solid border-2 border-black-100 h-[40px] w-[40px] flex items-center justify-center rounded-full p-3 lg:hover:bg-orange cursor-pointer transition-all"
           onClick={onClick}
         >
           <Image
@@ -26,7 +26,7 @@ const ComicsViewer = ({ onClick, isOpen, comic }) => {
           />
         </a>
         <div className="relative">
-          <a className="animate-bounce absolute top-1/2 -left-[25px] md:-left-[35px] lg:-left-[90px] bg-yellow-100 border-solid border-2 border-black-100 h-[50px] md:h-[70px] w-[50px] md:w-[70px] flex items-center justify-center rounded-full p-4 lg:hover:bg-orange cursor-pointer transition-all">
+          <a className="animate-bounce absolute top-[107%] md:top-1/2 left-[20%]  md:-left-[100px] lg:-left-[90px] bg-yellow-100 border-solid border-2 border-black-100 h-[50px] w-[50px] md:h-[70px] md:w-[70px] flex items-center justify-center rounded-full p-4 lg:hover:bg-orange cursor-pointer transition-all">
             <Image
               src={arrow}
               alt="arrow left"
@@ -35,14 +35,14 @@ const ComicsViewer = ({ onClick, isOpen, comic }) => {
               className="rotate-90 "
             />
           </a>
-          <div className="w-[85vw] md:w-[60vw] lg:w-[450px]">
+          <div className="w-[85vw] md:w-[60vw] lg:w-[500px]">
             <Image
               src={carosuelImg}
               alt="comic"
               className={`h-full w-full rounded-3xl object-cover object-center`}
             />
           </div>
-          <a className="animate-bounce absolute top-1/2 -right-[25px] md:-right-[35px] lg:-right-[90px] bg-yellow-100 border-solid border-2 border-black-100 h-[50px] md:h-[70px] w-[50px] md:w-[70px] flex items-center justify-center rounded-full p-4 lg:hover:bg-orange cursor-pointer transition-all">
+          <a className="animate-bounce absolute top-[107%] md:top-1/2 right-[20%]  md:-right-[100px] lg:-right-[90px] bg-yellow-100 border-solid border-2 border-black-100 h-[50px] w-[50px] md:h-[70px] md:w-[70px] flex items-center justify-center rounded-full p-4 lg:hover:bg-orange cursor-pointer transition-all">
             <Image
               src={arrow}
               alt="arrow right"
