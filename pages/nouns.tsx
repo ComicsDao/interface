@@ -16,7 +16,7 @@ import { useScreenSize } from "../provider/ScreenSizeProvider"
 
 const Home: NextPage = () => {
   const [isOpen, setIsOpen] = useState(true)
-  const hendelClick = () => {
+  const handleClick = () => {
     setIsOpen(isOpen == false ? true : false)
   }
 
@@ -104,7 +104,7 @@ const Home: NextPage = () => {
         <link rel="icon" href="/favicon.ico" />
       </Head>
 
-      <div className="fixed w-screen h-screen z-30 container-animation">
+      <div className="fixed z-30 w-screen h-screen container-animation">
         <main className="relative flex flex-col items-center justify-center h-screen overflow-hidden bg-white main-animation-box">
           <div className="absolute animate-bouncy">
             <DoubleText text="POW" className="-rotate-12 double-text" />
@@ -136,10 +136,10 @@ const Home: NextPage = () => {
         </a>
       </div>
       <div id="box-carousels" className="pt-[95px]">
-        {screenSize === "mobile" && <CarouselSm onClick={hendelClick} />}
-        {screenSize === "tablet" && <CarouselMd onClick={hendelClick} />}
-        {screenSize === "desktop" && <CarouselLg onClick={hendelClick} />}
-        <CarouselFull onClick={hendelClick} isOpen={isOpen} />
+        {screenSize === "mobile" && <CarouselSm onClick={handleClick} />}
+        {screenSize === "tablet" && <CarouselMd onClick={handleClick} />}
+        {screenSize === "desktop" && <CarouselLg onClick={handleClick} />}
+        <CarouselFull onClick={handleClick} isOpen={isOpen} />
       </div>
     </>
   )
