@@ -23,7 +23,7 @@ module.exports = {
     },
     fontFamily: {
       ubuntu: ["Ubuntu", "sans-serif"],
-      londrina: ["Londrina Solid", "cursive"]
+      londrina: ["Londrina", "cursive"]
     }
   },
   plugins: [require("tailwindcss"), require("autoprefixer")]

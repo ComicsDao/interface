@@ -136,7 +136,7 @@ const CarouselLg = ({ onClick }) => {
               bibendum ex, sit amet vehicula leo dui eget odio. Aliquam erat
               volutpat. 1111
             </p>
-            <a className=" w-2/3 font-ubuntu font-normal text-base bg-yellow-100 border-solid border-2 border-black-100 flex items-center justify-center rounded-full px-14 py-3 hover:bg-orange cursor-pointer transition-all">
+            <a className="w-2/3 font-ubuntu font-normal text-base bg-yellow-100 border-solid border-2 border-black-100 flex items-center justify-center rounded-full px-14 py-3 hover:bg-orange cursor-pointer transition-all">
               <Image
                 src={iconCart}
                 alt="icon cart"
