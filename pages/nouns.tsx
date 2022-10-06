@@ -93,8 +93,8 @@ const Home: NextPage = ({ comics }: any) => {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <Navbar />
-      <div className="fixed z-30 w-screen h-screen container-animation">
-        <main className="relative flex flex-col items-center justify-center h-screen overflow-hidden bg-white main-animation-box">
+      <div className="fixed z-30 w-screen h-screen 2xl:w-full container-animation">
+        <main className="relative flex flex-col items-center justify-center h-screen overflow-hidden bg-white max-w-screen-2xl main-animation-box">
           <div className="absolute animate-bouncy">
             <DoubleText text="POW" className="-rotate-12 double-text" />
           </div>
