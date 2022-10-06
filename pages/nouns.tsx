@@ -7,6 +7,7 @@ import { TimelineDefinition } from "@motionone/dom/types/timeline/types"
 import arrow from "public/img/icon/arrow.svg"
 import Image from "next/image"
 import { Navbar } from "../components/shared"
+import { fetchAPI } from "../lib/api"
 
 const Home: NextPage = ({ comics }: any) => {
   // Animation
@@ -139,19 +140,22 @@ const Home: NextPage = ({ comics }: any) => {
 export default Home
 
 export async function getStaticProps() {
-  const baseUrl = process.env.NEXT_PUBLIC_FRONT_URL
-  const apiRes = await fetch(`${baseUrl}/api/nouns-comics`, {
-    method: "GET",
-    headers: {
-      "Content-Type": "application/json"
-    }
-  })
-
-  const res = await apiRes.json()
+  const apiRes = await fetchAPI(
+    "/nouns-comics",
+    {
+      populate: {
+        Cards: {
+          populate: "*"
+        }
+      }
+    },
+    { method: "GET" },
+    process.env.STRAPI_KEY
+  )
 
   return {
     props: {
-      comics: res.data
+      comics: apiRes.data
     },
     revalidate: 60
   }
