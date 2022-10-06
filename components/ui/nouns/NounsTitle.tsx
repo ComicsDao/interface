@@ -1,6 +1,6 @@
-import { useScreenSize } from "/provider/ScreenSizeProvider"
+import { useScreenSize } from "../../../provider/ScreenSizeProvider"
 
-const ComicsTitle = ({ attr }) => {
+const NounsTitle = ({ attr }) => {
   const { screenSize } = useScreenSize()
   return (
     <div className="font-ubuntu px-[20px] mb-5 lg:px-0 lg:mb-10">
@@ -28,4 +28,4 @@ const ComicsTitle = ({ attr }) => {
   )
 }
 
-export default ComicsTitle
+export default NounsTitle
