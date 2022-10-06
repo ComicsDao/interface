@@ -1,5 +1,6 @@
 import { useState } from "react"
 import style from "styles/shared/navbar.module.scss"
+import Link from "next/link"
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false)
@@ -41,6 +42,13 @@ const Navbar = () => {
           isOpen ? "opacity-100 -bottom-[45px]" : "opacity-0 bottom-0"
         } md:static md:opacity-100 md:px-0 md:h-full md:w-1/2 md:bg-transparent `}
       >
+        <li
+          className={`font-ubuntu font-normal text-xs relative py-[3px] px-1 cursor-pointer md:text-base ${style.link_after}`}
+        >
+          <Link href="/">
+            <a>Home</a>
+          </Link>
+        </li>
         <li
           className={`font-ubuntu font-normal text-xs relative py-[3px] px-1 cursor-pointer md:text-base ${style.link_after}`}
         >

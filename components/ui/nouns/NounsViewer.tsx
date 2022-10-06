@@ -23,7 +23,7 @@ const NounsViewer = ({ onClick, isOpen, comicsToRead }) => {
 
   return (
     <div
-      className={`fixed z-30 backdrop-blur left-0 top-0 bottom-0 right-0 h-screen w-screen transition-all ${
+      className={` fixed z-30 backdrop-blur left-0 top-0 bottom-0 right-0 h-screen w-screen transition-all ${
         isOpen == true
           ? " opacity-0 scale-0 -z-30"
           : " opacity-100 scale-100 z-30"
@@ -42,11 +42,11 @@ const NounsViewer = ({ onClick, isOpen, comicsToRead }) => {
             className="rotate-90 "
           />
         </div>
-        <div className="relative">
+        <div className="relative h-[85vh]">
           {numberOfPages > 1 && active > 0 && (
             <div
               onClick={() => handleImages("left")}
-              className="animate-bounce absolute top-[94%] md:top-1/2 left-[20%]  md:-left-[100px] lg:-left-[90px] bg-yellow-100 border-solid border-2 border-black-100 h-[50px] w-[50px] md:h-[70px] md:w-[70px] flex items-center justify-center rounded-full p-4 lg:hover:bg-orange cursor-pointer transition-all"
+              className="animate-bounce absolute top-[93%] md:top-1/2 left-[20%]  md:-left-[100px] lg:-left-[90px] bg-yellow-100 border-solid border-2 border-black-100 h-[50px] w-[50px] md:h-[70px] md:w-[70px] flex items-center justify-center rounded-full p-4 lg:hover:bg-orange cursor-pointer transition-all"
             >
               <Image
                 src={arrow}
@@ -57,11 +57,11 @@ const NounsViewer = ({ onClick, isOpen, comicsToRead }) => {
               />
             </div>
           )}
-          <div className="w-[85vw] md:w-[60vw] h-screen">
+          <div className="w-[75vw] md:w-[60vw] h-screen">
             {images.map((image, index) => (
               <div
                 key={index}
-                className={`w-[85vw] md:w-[60vw] absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 lg:w-[500px] ${
+                className={`w-[75vw] md:w-[50vw] absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 lg:w-[500px] ${
                   index == active ? "opacity-1" : "opacity-0"
                 }`}
               >
@@ -78,7 +78,7 @@ const NounsViewer = ({ onClick, isOpen, comicsToRead }) => {
           {numberOfPages > 1 && active < numberOfPages - 1 && (
             <div
               onClick={() => handleImages("right")}
-              className="animate-bounce absolute top-[94%] md:top-1/2 right-[20%]  md:-right-[100px] lg:-right-[90px] bg-yellow-100 border-solid border-2 border-black-100 h-[50px] w-[50px] md:h-[70px] md:w-[70px] flex items-center justify-center rounded-full p-4 lg:hover:bg-orange cursor-pointer transition-all"
+              className="animate-bounce absolute top-[93%] md:top-1/2 right-[20%]  md:-right-[100px] lg:-right-[90px] bg-yellow-100 border-solid border-2 border-black-100 h-[50px] w-[50px] md:h-[70px] md:w-[70px] flex items-center justify-center rounded-full p-4 lg:hover:bg-orange cursor-pointer transition-all"
             >
               <Image
                 src={arrow}

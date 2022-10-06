@@ -18,7 +18,7 @@ const Home: NextPage = () => {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <main>
-        <div className="py-[70px] px-[40px] flex justify-between flex-col h-screen">
+        <div className="py-[70px] px-[40px] flex justify-between flex-col h-screen pb-[80px]">
           <p className="font-londrina text-8xl md:text-9xl text-black-100 relative">
             Comics
             <br className="md:hidden" />
