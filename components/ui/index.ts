@@ -1,4 +1,3 @@
-export { default as CarouselLg } from "./carousel/Carousel-lg"
 export { default as ComicsTitle } from "./carousel/ComicsTitle"
 export { default as ComicsImages } from "./carousel/ComicsImages"
 export { default as ReadComicsButton } from "./carousel/ComicsCardButton"

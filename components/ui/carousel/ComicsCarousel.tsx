@@ -5,8 +5,10 @@ import ComicsTitle from "./ComicsTitle"
 import ComicsImages from "./ComicsImages"
 import ComicsCardButton from "./ComicsCardButton"
 import ComicsCardDescription from "./ComicsCardDescription"
+import { useState } from "react"
 
 const ComicsCarousel = ({ onClick, comic }) => {
+  const [activeCard, setActiveCard] = useState(2)
   const { screenSize } = useScreenSize()
   const positions =
     screenSize === "mobile"
@@ -29,6 +31,9 @@ const ComicsCarousel = ({ onClick, comic }) => {
   console.log(comic.id)
 
   const handleCarousel = (number: number) => {
+    if (number == activeCard) {
+      setActiveCard(activeCard == 1 ? 2 : 1)
+    }
     const zIndex1 = { zIndex: 10 }
     const zIndex2 = { zIndex: 0 }
     const blockText = {
@@ -106,33 +111,69 @@ const ComicsCarousel = ({ onClick, comic }) => {
   const cards = attr.Cards
 
   return (
-    <div className="items-center justify-between pt-1 mb-8">
-      <div>
-        <ComicsTitle attr={attr} />
-        {cards.length > 0 && (
-          <>
-            <ComicsImages
-              id={comic.id}
-              cards={cards}
-              handleCarousel={handleCarousel}
-            />
-            <div className="font-ubuntu px-[20px] mb-5 flex items-center justify-between overflow-hidden relative">
-              <div className={`px-[40px] w-full text-animation-${comic.id}-1`}>
-                <ComicsCardDescription card={cards[0]} />
-                <ComicsCardButton card={cards[0]} onClick={onClick} />
-              </div>
-              {cards.length > 1 && (
-                <div
-                  className={`px-[40px] w-full absolute left-full opacity-0 text-animation-${comic.id}-2 scale-50`}
-                >
-                  <ComicsCardDescription card={cards[1]} />
-                  <ComicsCardButton card={cards[1]} onClick={onClick} />
+    <div className="pt-1 mb-[100px] lg:pt-0">
+      {screenSize === "desktop" && (
+        <div className="flex items-center justify-between">
+          {cards.length > 0 && (
+            <>
+              <div className="relative pl-[150px] w-[45%] h-[600px] flex justify-between flex-col">
+                <ComicsTitle attr={attr} />
+                <div className="relative flex">
+                  <div className={`w-full text-animation-${comic.id}-1`}>
+                    <ComicsCardDescription card={cards[0]} />
+                    <ComicsCardButton card={cards[0]} onClick={onClick} />
+                  </div>
+                  {cards.length > 1 && (
+                    <div
+                      className={`w-full absolute left-full opacity-0 text-animation-${comic.id}-2 scale-50`}
+                    >
+                      <ComicsCardDescription card={cards[1]} />
+                      <ComicsCardButton card={cards[1]} onClick={onClick} />
+                    </div>
+                  )}
                 </div>
-              )}
-            </div>
-          </>
-        )}
-      </div>
+              </div>
+              <ComicsImages
+                id={comic.id}
+                cards={cards}
+                handleCarousel={handleCarousel}
+                activeCard={activeCard}
+              />
+            </>
+          )}
+        </div>
+      )}
+      {(screenSize === "mobile" || screenSize === "tablet") && (
+        <>
+          <ComicsTitle attr={attr} />
+          {cards.length > 0 && (
+            <>
+              <ComicsImages
+                id={comic.id}
+                cards={cards}
+                handleCarousel={handleCarousel}
+                activeCard={activeCard}
+              />
+              <div className="font-ubuntu px-[20px] mb-5 flex items-center justify-between overflow-hidden relative">
+                <div
+                  className={`px-[40px] w-full text-animation-${comic.id}-1`}
+                >
+                  <ComicsCardDescription card={cards[0]} />
+                  <ComicsCardButton card={cards[0]} onClick={onClick} />
+                </div>
+                {cards.length > 1 && (
+                  <div
+                    className={`px-[40px] w-full absolute left-full opacity-0 text-animation-${comic.id}-2 scale-50`}
+                  >
+                    <ComicsCardDescription card={cards[1]} />
+                    <ComicsCardButton card={cards[1]} onClick={onClick} />
+                  </div>
+                )}
+              </div>
+            </>
+          )}
+        </>
+      )}
     </div>
   )
 }
