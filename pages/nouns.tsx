@@ -1,11 +1,6 @@
 import type { NextPage } from "next"
 import Head from "next/head"
-import {
-  DoubleText,
-  ComicsCarousel,
-  ComicsViewer,
-  CarouselLg
-} from "../components/ui"
+import { DoubleText, ComicsCarousel, ComicsViewer } from "../components/ui"
 import React, { useEffect, useState } from "react"
 import { timeline } from "motion"
 import { TimelineDefinition } from "@motionone/dom/types/timeline/types"
