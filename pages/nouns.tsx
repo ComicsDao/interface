@@ -1,21 +1,15 @@
 import type { NextPage } from "next"
 import Head from "next/head"
-import { DoubleText, ComicsCarousel, ComicsViewer } from "../components/ui"
+import { DoubleText, NounsSection } from "../components/ui"
 import React, { useEffect, useState } from "react"
 import { timeline } from "motion"
 import { TimelineDefinition } from "@motionone/dom/types/timeline/types"
 import arrow from "public/img/icon/arrow.svg"
 import Image from "next/image"
 import { Navbar } from "../components/shared"
-import { useScreenSize } from "../provider/ScreenSizeProvider"
+import { fetchAPI } from "../lib/api"
 
-const Home: NextPage = ({ comics }) => {
-  const [isOpen, setIsOpen] = useState(true)
-  const handleClick = () => {
-    setIsOpen(isOpen == false ? true : false)
-  }
-
-  const { screenSize } = useScreenSize()
+const Home: NextPage = ({ comics }: any) => {
   // Animation
   useEffect(() => {
     const sequence = [
@@ -91,8 +85,6 @@ const Home: NextPage = ({ comics }) => {
     return () => animationTimeline.cancel()
   }, [])
 
-  console.log(comics)
-
   return (
     <>
       <Head>
@@ -101,7 +93,7 @@ const Home: NextPage = ({ comics }) => {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <Navbar />
-      <div className="fixed w-screen h-screen z-30 container-animation">
+      <div className="fixed z-30 w-screen h-screen container-animation">
         <main className="relative flex flex-col items-center justify-center h-screen overflow-hidden bg-white main-animation-box">
           <div className="absolute animate-bouncy">
             <DoubleText text="POW" className="-rotate-12 double-text" />
@@ -132,14 +124,14 @@ const Home: NextPage = ({ comics }) => {
           <Image src={arrow} alt="arrow down" height={20} width={20} />
         </a>
       </div>
-      <div id="box-carousels" className="pt-[95px]">
-        {comics.map((comic, index) => (
-          <React.Fragment key={index}>
-            <ComicsCarousel onClick={handleClick} comic={comic} />
-            {/* <CarouselLg onClick={handleClick} comic={comic} /> */}
-            <ComicsViewer onClick={handleClick} comic={comic} isOpen={isOpen} />
-          </React.Fragment>
-        ))}
+      <div id="box-carousels" className="pt-[145px]">
+        {comics.map((comic, index) => {
+          return (
+            <React.Fragment key={index}>
+              <NounsSection comic={comic} />
+            </React.Fragment>
+          )
+        })}
       </div>
     </>
   )
@@ -148,19 +140,22 @@ const Home: NextPage = ({ comics }) => {
 export default Home
 
 export async function getStaticProps() {
-  const baseUrl = process.env.NEXT_PUBLIC_FRONT_URL
-  const apiRes = await fetch(`${baseUrl}/api/nouns-comics`, {
-    method: "GET",
-    headers: {
-      "Content-Type": "application/json"
-    }
-  })
-
-  const res = await apiRes.json()
+  const apiRes = await fetchAPI(
+    "/nouns-comics",
+    {
+      populate: {
+        Cards: {
+          populate: "*"
+        }
+      }
+    },
+    { method: "GET" },
+    process.env.STRAPI_KEY
+  )
 
   return {
     props: {
-      comics: res.data
+      comics: apiRes.data
     },
     revalidate: 60
   }

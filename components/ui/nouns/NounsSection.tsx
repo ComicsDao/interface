@@ -1,15 +1,22 @@
 import { timeline } from "motion"
 import { TimelineDefinition } from "@motionone/dom/types/timeline/types"
 import { useScreenSize } from "../../../provider/ScreenSizeProvider"
-import ComicsTitle from "./ComicsTitle"
-import ComicsImages from "./ComicsImages"
-import ComicsCardButton from "./ComicsCardButton"
-import ComicsCardDescription from "./ComicsCardDescription"
+import NounsTitle from "./NounsTitle"
+import NounsImages from "./NounsImages"
+import NounsCardButton from "./NounsCardButton"
+import NounsCardDescription from "./NounsCardDescription"
 import { useState } from "react"
+import NounsViewer from "./NounsViewer"
 
-const ComicsCarousel = ({ onClick, comic }) => {
+const NounsSection = ({ comic }) => {
   const [activeCard, setActiveCard] = useState(2)
+  const [isOpen, setIsOpen] = useState(true)
   const { screenSize } = useScreenSize()
+
+  const comicsToRead = comic.attributes?.Cards.filter(
+    (card) => card.__component === "card.comics-card"
+  )[0]
+
   const positions =
     screenSize === "mobile"
       ? [
@@ -28,7 +35,6 @@ const ComicsCarousel = ({ onClick, comic }) => {
             height: "345px"
           }
         ]
-  console.log(comic.id)
 
   const handleCarousel = (number: number) => {
     if (number == activeCard) {
@@ -114,41 +120,47 @@ const ComicsCarousel = ({ onClick, comic }) => {
     <div className="pt-1 mb-[100px] lg:pt-0">
       {screenSize === "desktop" && (
         <div className="flex items-center justify-between">
-          {cards.length > 0 && (
-            <>
-              <div className="relative pl-[150px] w-[45%] h-[600px] flex justify-between flex-col">
-                <ComicsTitle attr={attr} />
-                <div className="relative flex">
-                  <div className={`w-full text-animation-${comic.id}-1`}>
-                    <ComicsCardDescription card={cards[0]} />
-                    <ComicsCardButton card={cards[0]} onClick={onClick} />
-                  </div>
-                  {cards.length > 1 && (
-                    <div
-                      className={`w-full absolute left-full opacity-0 text-animation-${comic.id}-2 scale-50`}
-                    >
-                      <ComicsCardDescription card={cards[1]} />
-                      <ComicsCardButton card={cards[1]} onClick={onClick} />
-                    </div>
-                  )}
+          <div className="relative pl-[150px] w-[45%] min-h-[600px] flex justify-between flex-col">
+            <NounsTitle attr={attr} />
+            {cards.length > 0 && (
+              <div className="relative flex">
+                <div className={`w-full text-animation-${comic.id}-1`}>
+                  <NounsCardDescription card={cards[0]} />
+                  <NounsCardButton
+                    card={cards[0]}
+                    onClick={() => setIsOpen(!isOpen)}
+                  />
                 </div>
+                {cards.length > 1 && (
+                  <div
+                    className={`w-full absolute left-full opacity-0 text-animation-${comic.id}-2 scale-50`}
+                  >
+                    <NounsCardDescription card={cards[1]} />
+                    <NounsCardButton
+                      card={cards[1]}
+                      onClick={() => setIsOpen(!isOpen)}
+                    />
+                  </div>
+                )}
               </div>
-              <ComicsImages
-                id={comic.id}
-                cards={cards}
-                handleCarousel={handleCarousel}
-                activeCard={activeCard}
-              />
-            </>
+            )}
+          </div>
+          {cards.length > 0 && (
+            <NounsImages
+              id={comic.id}
+              cards={cards}
+              handleCarousel={handleCarousel}
+              activeCard={activeCard}
+            />
           )}
         </div>
       )}
       {(screenSize === "mobile" || screenSize === "tablet") && (
         <>
-          <ComicsTitle attr={attr} />
+          <NounsTitle attr={attr} />
           {cards.length > 0 && (
             <>
-              <ComicsImages
+              <NounsImages
                 id={comic.id}
                 cards={cards}
                 handleCarousel={handleCarousel}
@@ -158,15 +170,21 @@ const ComicsCarousel = ({ onClick, comic }) => {
                 <div
                   className={`px-[40px] w-full text-animation-${comic.id}-1`}
                 >
-                  <ComicsCardDescription card={cards[0]} />
-                  <ComicsCardButton card={cards[0]} onClick={onClick} />
+                  <NounsCardDescription card={cards[0]} />
+                  <NounsCardButton
+                    card={cards[0]}
+                    onClick={() => setIsOpen(!isOpen)}
+                  />
                 </div>
                 {cards.length > 1 && (
                   <div
                     className={`px-[40px] w-full absolute left-full opacity-0 text-animation-${comic.id}-2 scale-50`}
                   >
-                    <ComicsCardDescription card={cards[1]} />
-                    <ComicsCardButton card={cards[1]} onClick={onClick} />
+                    <NounsCardDescription card={cards[1]} />
+                    <NounsCardButton
+                      card={cards[1]}
+                      onClick={() => setIsOpen(!isOpen)}
+                    />
                   </div>
                 )}
               </div>
@@ -174,8 +192,15 @@ const ComicsCarousel = ({ onClick, comic }) => {
           )}
         </>
       )}
+      {comicsToRead && (
+        <NounsViewer
+          onClick={() => setIsOpen(!isOpen)}
+          comicsToRead={comicsToRead}
+          isOpen={isOpen}
+        />
+      )}
     </div>
   )
 }
 
-export default ComicsCarousel
+export default NounsSection
