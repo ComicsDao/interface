@@ -29,7 +29,7 @@ const Home: NextPage = ({ comics }: any) => {
       ],
       [
         ".yellow-circle",
-        { opacity: 1, transform: "scale(30)" },
+        { opacity: 1, transform: "scale(50)" },
         { duration: 0.4 }
       ],
       [".animate-bouncy", { opacity: 0 }],
@@ -93,12 +93,12 @@ const Home: NextPage = ({ comics }: any) => {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <Navbar />
-      <div className="fixed z-30 w-screen h-screen container-animation">
-        <main className="relative flex flex-col items-center justify-center h-screen overflow-hidden bg-white main-animation-box">
+      <div className="fixed z-30 w-screen h-screen 2xl:w-full container-animation">
+        <main className="relative flex flex-col items-center justify-center h-screen overflow-hidden bg-white max-w-screen-2xl main-animation-box">
           <div className="absolute animate-bouncy">
             <DoubleText text="POW" className="-rotate-12 double-text" />
           </div>
-          <div className="absolute w-16 h-16 -translate-x-1/2 -translate-y-1/2 bg-yellow-100 rounded-full opacity-0 top-1/2 left-1/2 yellow-circle"></div>
+          <div className="fixed w-16 h-16 -translate-x-1/2 -translate-y-1/2 bg-yellow-100 rounded-full opacity-0 top-1/2 left-1/2 yellow-circle"></div>
           <div className="text-center scale-75 opacity-0 comics-text">
             <p className="lg:text-[12rem] z-10 font-londrina text-8xl text-black-100 relative">
               NOUNS
@@ -116,7 +116,7 @@ const Home: NextPage = ({ comics }: any) => {
           </div>
         </main>
       </div>
-      <div className="absolute flex justify-end mt-8 opacity-0 animate-bounce arrow-box bottom-10 lg:bottom-20 left-1/2">
+      <div className="absolute flex justify-end mt-8 opacity-0 animate-bounce arrow-box bottom-10 lg:bottom-20 2xl:bottom-[20%] left-1/2">
         <a
           href="#box-carousels"
           className="bg-yellow-100 lg:hover:bg-orange -translate-x-1/2 cursor-pointer border-solid border-2 border-black-100 h-[50px] w-[50px] flex items-center justify-center rounded-full p-3"
