@@ -41,7 +41,7 @@ const Navbar = () => {
         className={`absolute w-full px-[20px] h-[45px] flex items-center justify-between left-0 transition-all	 bg-yellow-100 text-black-100
         ${
           isOpen ? "opacity-100 -bottom-[45px]" : "opacity-0 bottom-0"
-        } md:static md:opacity-100 md:px-0 md:h-full md:w-[67%] md:w-1/2 md:bg-transparent `}
+        } md:static md:opacity-100 md:px-0 md:h-full md:w-[67%] lg:w-1/2 md:bg-transparent `}
       >
         <li
           className={`font-ubuntu font-normal text-xs relative py-[3px] px-1 cursor-pointer md:text-base ${style.link_after}`}
