@@ -1,6 +1,7 @@
 import { useState } from "react"
 import style from "styles/shared/navbar.module.scss"
 import Link from "next/link"
+import { ConnectButton } from "@rainbow-me/rainbowkit"
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false)
@@ -59,11 +60,7 @@ const Navbar = () => {
         >
           <a>Join Discord</a>
         </li>
-        <li
-          className={`font-ubuntu font-normal text-xs relative py-[3px] px-1 cursor-pointer md:text-base ${style.link_after}`}
-        >
-          <a>Connect</a>
-        </li>
+        <ConnectButton />
       </ul>
     </div>
   )
