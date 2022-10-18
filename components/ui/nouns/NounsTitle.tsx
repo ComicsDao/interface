@@ -12,7 +12,7 @@ const NounsTitle = ({ attr }) => {
       )}
       {screenSize === "desktop" && (
         <>
-          <span className="h-full w-[6px] bg-yellow-100 absolute left-[40px] top-0"></span>
+          <span className="h-[110%] w-[6px] bg-yellow-100 absolute left-[40px] top-0"></span>
           <p className=" font-normal text-lg text-black-100 absolute left-[55px] top-0">
             {attr.issue}
           </p>

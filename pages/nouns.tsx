@@ -109,9 +109,9 @@ const Home: NextPage = ({ comics }: any) => {
               Powered by ComicsDAO
             </p>
             <div className="absolute opacity-0 -top-10 right-3/4 lg:top-[-50px] lg:right-[78px] cards-box lg:pt-6 xl:pt-0 ">
-              <div className="absolute rounded animated-card-1 w-[80px] h-[95px] lg:w-[220px] lg:h-[265px] border-2 border-solid border-black-100 bg-red"></div>
-              <div className="absolute rounded animated-card-2 left-3 w-[80px] h-[95px] lg:w-[220px] lg:h-[265px] bg-yellow-200 border-2 border-solid border-black-100"></div>
-              <div className="absolute rounded animated-card-3 left-6 w-[80px] h-[95px] lg:w-[220px] lg:h-[265px] border-2 border-solid border-black-100 bg-orange"></div>
+              <div className="absolute rounded-lg animated-card-1 w-[80px] h-[95px] lg:w-[220px] lg:h-[265px] border-4 border-solid border-black-100 bg-red"></div>
+              <div className="absolute rounded-lg animated-card-2 left-3 w-[80px] h-[95px] lg:w-[220px] lg:h-[265px] bg-yellow-200 border-4 border-solid border-black-100"></div>
+              <div className="absolute rounded-lg animated-card-3 left-6 w-[80px] h-[95px] lg:w-[220px] lg:h-[265px] border-4 border-solid border-black-100 bg-orange"></div>
             </div>
           </div>
         </main>

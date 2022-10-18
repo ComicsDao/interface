@@ -43,16 +43,16 @@ const NounsSection = ({ comic }) => {
     const zIndex1 = { zIndex: 10 }
     const zIndex2 = { zIndex: 0 }
     const blockText = {
-      opacity: 1,
-      position: "relative",
-      left: 0,
-      transform: "scale(1)"
+      opacity: 1
+      // position: "relative",
+      // left: 0,
+      // transform: "scale(1)"
     }
     const hiddenText = {
-      opacity: 0,
-      position: "absolute",
-      left: "100%",
-      transform: "scale(.5)"
+      opacity: 0
+      // position: "absolute",
+      // left: "100%",
+      // transform: "scale(.5)"
     }
 
     const sequence = [
@@ -77,18 +77,18 @@ const NounsSection = ({ comic }) => {
         `.text-animation-${comic.id}-1`,
         number === 1 ? blockText : hiddenText,
         {
-          duration: 1,
+          duration: 0.5,
           easing: "ease-in-out",
-          at: 0
+          at: 0.5
         }
       ],
       [
         `.text-animation-${comic.id}-2`,
         number === 1 ? hiddenText : blockText,
         {
-          duration: 1,
+          duration: 0.5,
           easing: "ease-in-out",
-          at: 0
+          at: 0.5
         }
       ],
       [
@@ -133,7 +133,7 @@ const NounsSection = ({ comic }) => {
                 </div>
                 {cards.length > 1 && (
                   <div
-                    className={`w-full absolute left-full opacity-0 text-animation-${comic.id}-2 scale-50`}
+                    className={`w-full absolute bottom-0 opacity-0 text-animation-${comic.id}-2`}
                   >
                     <NounsCardDescription card={cards[1]} />
                     <NounsCardButton
