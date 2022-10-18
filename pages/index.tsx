@@ -13,10 +13,28 @@ const Home: NextPage = () => {
   return (
     <div>
       <Head>
-        <title>Comics Dao</title>
-        <meta name="description" content="" />
-        <meta name="title" content="" />
         <link rel="icon" href="/favicon.ico" />
+        <title>Comics DAO</title>
+        <meta name="description" content="Comics DAO, visit us." />
+        <link rel="canonical" hrefLang={"en"} href={`https://comicsdao.wtf`} />
+        <link href={`https://comicsdao.wtf`} rel="x-default" />
+        <meta property="og:title" content="Comics DAO" />
+        <meta property="og:description" content="Comics DAO, visit us." />
+        <meta
+          property="og:image"
+          content="https://comicsdao.wtf/img/icon/close.png"
+        />
+        <meta property="og:url" content={"https://comicsdao.wtf"} />
+        <meta property="og:locale" content={"en"} />
+        <meta property="og:type" content="website" />
+        <meta name="twitter:card" content="summary" />
+        <meta name="twitter:title" content="Comics DAO" />
+        <meta name="twitter:description" content="Comics DAO, visit us." />
+        <meta
+          name="twitter:image"
+          content="https://comicsdao.wtf/img/icon/close.png"
+        />
+        <meta name="twitter:creator" content="@ComicsDAO" />
       </Head>
       <main>
         <div className="py-[70px] px-[40px] flex justify-between flex-col h-screen pb-[80px]">
