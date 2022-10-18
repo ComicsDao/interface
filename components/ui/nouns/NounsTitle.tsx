@@ -18,9 +18,9 @@ const NounsTitle = ({ attr }) => {
           </p>
         </>
       )}
-      <h2 className="px-[40px] lg:px-0 font-normal text-5xl mb-5 text-black-200 leading-[120%] ">
+      <h3 className="px-[40px] lg:px-0 font-normal text-5xl mb-5 text-black-200 leading-[120%] ">
         {attr.title}
-      </h2>
+      </h3>
       <p className="px-[40px] lg:px-0 italic font-light text-base text-black-200 leading-9	">
         {attr.description}
       </p>

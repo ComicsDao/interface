@@ -100,14 +100,14 @@ const Home: NextPage = ({ comics }: any) => {
           </div>
           <div className="fixed w-16 h-16 -translate-x-1/2 -translate-y-1/2 bg-yellow-100 rounded-full opacity-0 top-1/2 left-1/2 yellow-circle"></div>
           <div className="text-center scale-75 opacity-0 comics-text">
-            <p className="xl:text-[11rem] lg:text-[9rem] z-10 font-londrina text-8xl text-black-100 relative">
+            <h1 className="xl:text-[11rem] lg:text-[9rem] z-10 font-londrina text-8xl text-black-100 relative">
               NOUNS
               <br />
               COMICS
-            </p>
-            <p className="absolute z-10 text-sm -bottom-1 right-2 text-black-100 font-ubuntu">
+            </h1>
+            <h2 className="absolute z-10 text-sm -bottom-1 right-2 text-black-100 font-ubuntu">
               Powered by ComicsDAO
-            </p>
+            </h2>
             <div className="absolute opacity-0 -top-10 right-3/4 lg:top-[-50px] lg:right-[78px] cards-box lg:pt-6 xl:pt-0 ">
               <div className="absolute rounded-lg animated-card-1 w-[80px] h-[95px] lg:w-[220px] lg:h-[265px] border-4 border-solid border-black-100 bg-red"></div>
               <div className="absolute rounded-lg animated-card-2 left-3 w-[80px] h-[95px] lg:w-[220px] lg:h-[265px] bg-yellow-200 border-4 border-solid border-black-100"></div>
