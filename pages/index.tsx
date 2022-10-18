@@ -19,13 +19,16 @@ const Home: NextPage = () => {
       </Head>
       <main>
         <div className="py-[70px] px-[40px] flex justify-between flex-col h-screen pb-[80px]">
-          <p className="font-londrina text-8xl md:text-9xl text-black-100 relative">
+          <p className="relative font-londrina text-8xl md:text-9xl text-black-100">
             Comics
             <br className="md:hidden" />
             DAO
           </p>
           <div className="grid grid-cols-2 gap-10 lg:grid-cols-4 ">
             <a
+              href="https://discord.gg/6t8XStmUK5"
+              target={"_blank"}
+              rel="noreferrer"
               className={`font-ubuntu font-normal text-lg  flex items-center relative p-2 w-full ${style.link_after_home}`}
             >
               <div className="mr-3">
@@ -39,6 +42,7 @@ const Home: NextPage = () => {
               <p>Discord</p>
             </a>
             <a
+              href="https://comicsdao.notion.site/Comics-DAO-34f5ccd8bc174683984de6c1b84c6241"
               className={`font-ubuntu font-normal text-lg  flex items-center relative p-2 w-full ${style.link_after_home}`}
             >
               <div className="mr-3">
@@ -47,6 +51,7 @@ const Home: NextPage = () => {
               <p>Notion</p>
             </a>
             <a
+              href="https://twitter.com/ComicsDAO"
               className={`font-ubuntu font-normal text-lg  flex items-center relative p-2 w-full ${style.link_after_home}`}
             >
               <div className="mr-3">
@@ -55,6 +60,7 @@ const Home: NextPage = () => {
               <p>Twitter</p>
             </a>
             <a
+              href="https://juicebox.money/#/v2/p/31"
               className={`font-ubuntu font-normal text-lg flex items-center relative p-2 w-full ${style.link_after_home}`}
             >
               <div className="mr-3">
@@ -65,7 +71,7 @@ const Home: NextPage = () => {
           </div>
           <Link href={"/nouns"}>
             <a className="flex items-center animate-bounce lg:justify-end">
-              <p className="font-londrina text-4xl lg:text-6xl font-medium text-black-100 relative">
+              <p className="relative text-4xl font-medium font-londrina lg:text-6xl text-black-100">
                 Nouns Comics
               </p>
               <span className="ml-3 bg-yellow-100 border-solid border-2 border-black-100 h-[40px] w-[40px] flex items-center justify-center rounded-full p-3 lg:hover:bg-orange cursor-pointer transition-all">

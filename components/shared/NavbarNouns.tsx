@@ -3,7 +3,7 @@ import style from "styles/shared/navbar.module.scss"
 import Link from "next/link"
 import { ConnectButton } from "@rainbow-me/rainbowkit"
 
-const Navbar = () => {
+const NavbarNouns = () => {
   const [isOpen, setIsOpen] = useState(false)
   const hendelClick = () => {
     setIsOpen(!isOpen)
@@ -12,14 +12,16 @@ const Navbar = () => {
   return (
     <div className="max-w-screen-2xl fixed w-full h-[95px] border-yellow-100	border-solid	border-b-2 md:px-[40px] md:flex justify-between items-center bg-white navbar-scroll">
       <div className="h-full bg-white flex justify-between items-center z-10 relative px-[20px] md:px-0">
-        <p className="flex flex-col text-black-100">
-          <span className="text-4xl font-normal font-londrina">
-            NOUNS COMICS
-          </span>
-          <span className="text-xs font-light font-ubuntu">
-            Powered by ComicsDAO
-          </span>
-        </p>
+        <Link href={"/nouns"}>
+          <a className="flex flex-col text-black-100">
+            <span className="text-4xl font-normal font-londrina">
+              NOUNS COMICS
+            </span>
+            <span className="text-xs font-light font-ubuntu">
+              Powered by ComicsDAO
+            </span>
+          </a>
+        </Link>
         <div
           className="relative w-[40px] h-[25px] md:hidden"
           onClick={hendelClick}
@@ -53,12 +55,13 @@ const Navbar = () => {
         <li
           className={`font-ubuntu font-normal text-xs relative py-[3px] px-1 cursor-pointer md:text-base ${style.link_after}`}
         >
-          <a>Support</a>
-        </li>
-        <li
-          className={`font-ubuntu font-normal text-xs relative py-[3px] px-1 cursor-pointer md:text-base ${style.link_after}`}
-        >
-          <a>Join Discord</a>
+          <a
+            href="https://discord.gg/6t8XStmUK5"
+            target={"_blank"}
+            rel="noreferrer"
+          >
+            Join Discord
+          </a>
         </li>
         <ConnectButton />
       </ul>
@@ -66,4 +69,4 @@ const Navbar = () => {
   )
 }
 
-export default Navbar
+export default NavbarNouns
