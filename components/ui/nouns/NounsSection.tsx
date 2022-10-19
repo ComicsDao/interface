@@ -43,16 +43,12 @@ const NounsSection = ({ comic }) => {
     const zIndex1 = { zIndex: 10 }
     const zIndex2 = { zIndex: 0 }
     const blockText = {
-      opacity: 1
-      // position: "relative",
-      // left: 0,
-      // transform: "scale(1)"
+      opacity: 1,
+      zIndex: 10
     }
     const hiddenText = {
-      opacity: 0
-      // position: "absolute",
-      // left: "100%",
-      // transform: "scale(.5)"
+      opacity: 0,
+      zIndex: 0
     }
 
     const sequence = [
@@ -124,7 +120,7 @@ const NounsSection = ({ comic }) => {
             <NounsTitle attr={attr} />
             {cards.length > 0 && (
               <div className="relative flex">
-                <div className={`w-full text-animation-${comic.id}-1`}>
+                <div className={`w-full z-10 text-animation-${comic.id}-1`}>
                   <NounsCardDescription card={cards[0]} />
                   <NounsCardButton
                     card={cards[0]}
