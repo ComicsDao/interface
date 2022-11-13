@@ -116,7 +116,7 @@ const NounsSection = ({ comic }) => {
     <div className="pt-1 mb-[100px] lg:pt-0">
       {screenSize === "desktop" && (
         <div className="flex items-center justify-between">
-          <div className="relative pl-[150px] w-[45%] min-h-[600px] flex justify-between flex-col">
+          <div className="relative pl-[160px] w-[45%] min-h-[600px] flex justify-between flex-col">
             <NounsTitle attr={attr} />
             {cards.length > 0 && (
               <div className="relative flex">
