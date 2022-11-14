@@ -7,55 +7,64 @@
 @tailwind utilities;
 
 @font-face {
+  font-display: swap;
   font-family: "Londrina";
   src: url("../public/fonts/Londrina_Solid/LondrinaSolid-Thin.ttf");
-  font-weight: thin;
+  font-weight: 100;
 }
 
 @font-face {
+  font-display: swap;
   font-family: "Londrina";
   src: url("../public/fonts/Londrina_Solid/LondrinaSolid-Light.ttf");
-  font-weight: light;
+  font-weight: 300;
 }
 
 @font-face {
+  font-display: swap;
   font-family: "Londrina";
   src: url("../public/fonts/Londrina_Solid/LondrinaSolid-Regular.ttf");
-  font-weight: normal;
+  font-weight: 400;
 }
 
 @font-face {
+  font-display: swap;
   font-family: "Londrina";
   src: url("../public/fonts/Londrina_Solid/LondrinaSolid-Black.ttf");
-  font-weight: bold;
+  font-weight: 600;
 }
 
 @font-face {
+  font-display: swap;
   font-family: "Ubuntu";
   src: url("../public/fonts/Ubuntu/Ubuntu-Light.ttf");
-  font-weight: light;
+  font-weight: 300;
 }
 
 @font-face {
+  font-display: swap;
   font-family: "Ubuntu";
   src: url("../public/fonts/Ubuntu/Ubuntu-LightItalic.ttf");
-  font-weight: light;
+  font-weight: 300;
   font-style: italic;
 }
 
 @font-face {
+  font-display: swap;
   font-family: "Ubuntu";
   src: url("../public/fonts/Ubuntu/Ubuntu-Regular.ttf");
-  font-weight: normal;
+  font-weight: 400;
 }
 
 @font-face {
+  font-display: swap;
   font-family: "Ubuntu";
   src: url("../public/fonts/Ubuntu/Ubuntu-Medium.ttf");
   font-weight: medium;
 }
 
 @font-face {
+  font-display: swap;
   font-family: "Ubuntu";
   src: url("../public/fonts/Ubuntu/Ubuntu-MediumItalic.ttf");
   font-weight: medium;
@@ -63,15 +72,17 @@
 }
 
 @font-face {
+  font-display: swap;
   font-family: "Ubuntu";
   src: url("../public/fonts/Ubuntu/Ubuntu-Bold.ttf");
-  font-weight: bold;
+  font-weight: 600;
 }
 
 @font-face {
+  font-display: swap;
   font-family: "Ubuntu";
   src: url("../public/fonts/Ubuntu/Ubuntu-BoldItalic.ttf");
-  font-weight: bold;
+  font-weight: 600;
   font-style: italic;
 }
 

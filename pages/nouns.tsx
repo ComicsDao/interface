@@ -8,6 +8,9 @@ import arrow from "public/img/icon/arrow.svg"
 import Image from "next/image"
 import { NavbarNouns } from "../components/shared"
 import { fetchAPI } from "../lib/api"
+import pinkComic from "public/img/pink.png"
+import orangeComic from "public/img/orange.png"
+import yellowComic from "public/img/yellow.png"
 
 const Home: NextPage = ({ comics }: any) => {
   // Animation
@@ -97,7 +100,7 @@ const Home: NextPage = ({ comics }: any) => {
         <meta property="og:description" content="Comics DAO, visit us." />
         <meta
           property="og:image"
-          content="https://comicsdao.wtf/img/icon/close.png"
+          content="https://comicsdao.wtf/img/nounspreview.png"
         />
         <meta property="og:url" content={"https://comicsdao.wtf"} />
         <meta property="og:locale" content={"en"} />
@@ -107,7 +110,7 @@ const Home: NextPage = ({ comics }: any) => {
         <meta name="twitter:description" content="Comics DAO, visit us." />
         <meta
           name="twitter:image"
-          content="https://comicsdao.wtf/img/icon/close.png"
+          content="https://comicsdao.wtf/img/nounspreview.png"
         />
         <meta name="twitter:creator" content="@ComicsDAO" />
       </Head>
@@ -128,6 +131,15 @@ const Home: NextPage = ({ comics }: any) => {
               Powered by ComicsDAO
             </h2>
             <div className="absolute opacity-0 -top-10 right-3/4 lg:top-[-50px] lg:right-[78px] cards-box lg:pt-6 xl:pt-0 ">
+              {/* <div className="absolute animated-card-1 top-[-60px]">
+                <Image src={pinkComic} alt="comics illustration" />
+              </div>
+              <div className="absolute animated-card-2 left-3 top-[-60px] ">
+                <Image src={yellowComic} alt="comics illustration" />
+              </div>
+              <div className="absolute animated-card-3 left-6 top-[-60px]">
+                <Image src={orangeComic} alt="comics illustration" />
+              </div> */}
               <div className="absolute rounded-lg animated-card-1 w-[80px] h-[95px] lg:w-[220px] lg:h-[265px] border-4 border-solid border-black-100 bg-red"></div>
               <div className="absolute rounded-lg animated-card-2 left-3 w-[80px] h-[95px] lg:w-[220px] lg:h-[265px] bg-yellow-200 border-4 border-solid border-black-100"></div>
               <div className="absolute rounded-lg animated-card-3 left-6 w-[80px] h-[95px] lg:w-[220px] lg:h-[265px] border-4 border-solid border-black-100 bg-orange"></div>
