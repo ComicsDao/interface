@@ -100,7 +100,7 @@ const Home: NextPage = ({ comics }: any) => {
         <meta property="og:description" content="Comics DAO, visit us." />
         <meta
           property="og:image"
-          content="https://comicsdao.wtf/img/icon/close.png"
+          content="https://comicsdao.wtf/img/nounspreview.png"
         />
         <meta property="og:url" content={"https://comicsdao.wtf"} />
         <meta property="og:locale" content={"en"} />
@@ -110,7 +110,7 @@ const Home: NextPage = ({ comics }: any) => {
         <meta name="twitter:description" content="Comics DAO, visit us." />
         <meta
           name="twitter:image"
-          content="https://comicsdao.wtf/img/icon/close.png"
+          content="https://comicsdao.wtf/img/nounspreview.png"
         />
         <meta name="twitter:creator" content="@ComicsDAO" />
       </Head>

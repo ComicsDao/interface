@@ -8,6 +8,8 @@ import juice from "public/img/icon/juice.png"
 import arrow from "public/img/icon/arrow.svg"
 import style from "styles/shared/navbar.module.scss"
 import Link from "next/link"
+import comicsTitleImg from "public/img/comicsdaogreen.png"
+import mask2 from "public/img/mask2.png"
 
 const Home: NextPage = () => {
   return (
@@ -15,33 +17,47 @@ const Home: NextPage = () => {
       <Head>
         <link rel="icon" href="/favicon.ico" />
         <title>Comics DAO</title>
-        <meta name="description" content="Comics DAO, visit us." />
+        <meta
+          name="description"
+          content="Comics DAO | Creating the ultimate community comic book collection. Don’t just own a piece of history, enjoy it!"
+        />
         <link rel="canonical" hrefLang={"en"} href={`https://comicsdao.wtf`} />
         <link href={`https://comicsdao.wtf`} rel="x-default" />
         <meta property="og:title" content="Comics DAO" />
-        <meta property="og:description" content="Comics DAO, visit us." />
+        <meta
+          property="og:description"
+          content="Comics DAO | Creating the ultimate community comic book collection. Don’t just own a piece of history, enjoy it!"
+        />
         <meta
           property="og:image"
-          content="https://comicsdao.wtf/img/icon/close.png"
+          content="https://comicsdao.wtf/img/comicsdaogreen.png"
         />
         <meta property="og:url" content={"https://comicsdao.wtf"} />
         <meta property="og:locale" content={"en"} />
         <meta property="og:type" content="website" />
         <meta name="twitter:card" content="summary" />
         <meta name="twitter:title" content="Comics DAO" />
-        <meta name="twitter:description" content="Comics DAO, visit us." />
+        <meta
+          name="twitter:description"
+          content="Comics DAO | Creating the ultimate community comic book collection. Don’t just own a piece of history, enjoy it!"
+        />
         <meta
           name="twitter:image"
-          content="https://comicsdao.wtf/img/icon/close.png"
+          content="https://comicsdao.wtf/img/comicsdaogreen.png"
         />
         <meta name="twitter:creator" content="@ComicsDAO" />
       </Head>
       <main>
         <div className="py-[70px] px-[40px] flex justify-between flex-col h-screen pb-[80px]">
-          <h1 className="relative font-londrina text-8xl md:text-9xl text-black-100">
-            Comics <br className="md:hidden" />
-            DAO
+          <h1 className="absolute opacity-0 font-londrina text-8xl md:text-9xl text-black-100">
+            Comics DAO
           </h1>
+          <Image
+            src={comicsTitleImg}
+            alt="Comics DAO"
+            width={240}
+            className="mx-auto lg:mx-0"
+          />
           <div className="grid grid-cols-2 gap-10 lg:grid-cols-4 ">
             <a
               href="https://discord.gg/6t8XStmUK5"
@@ -89,10 +105,16 @@ const Home: NextPage = () => {
           </div>
           <Link href={"/nouns"}>
             <a className="flex items-center animate-bounce lg:justify-end">
+              <Image
+                src={mask2}
+                alt="Comics DAO superhero mask"
+                width={80}
+                className="mr-4"
+              />
               <h2 className="relative text-4xl font-medium font-londrina lg:text-6xl text-black-100">
                 Nouns Comics
               </h2>
-              <span className="ml-3 bg-yellow-100 border-solid border-2 border-black-100 h-[40px] w-[40px] flex items-center justify-center rounded-full p-3 lg:hover:bg-orange cursor-pointer transition-all">
+              <span className="ml-3 bg-green border-solid border-2 border-black-100 h-[40px] w-[40px] flex items-center justify-center rounded-full p-3 cursor-pointer transition-all">
                 <Image
                   src={arrow}
                   alt="arrow right"
