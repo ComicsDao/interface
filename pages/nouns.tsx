@@ -94,7 +94,11 @@ const Home: NextPage = ({ comics }: any) => {
         <link rel="icon" href="/favicon.ico" />
         <title>Nouns Comics | Powered by Comics DAO</title>
         <meta name="description" content="Comics DAO, visit us." />
-        <link rel="canonical" hrefLang={"en"} href={`https://comicsdao.wtf`} />
+        <link
+          rel="canonical"
+          hrefLang={"en"}
+          href={`https://comicsdao.wtf/nouns`}
+        />
         <link href={`https://comicsdao.wtf`} rel="x-default" />
         <meta property="og:title" content="Comics DAO" />
         <meta property="og:description" content="Comics DAO, visit us." />
@@ -102,7 +106,7 @@ const Home: NextPage = ({ comics }: any) => {
           property="og:image"
           content="https://comicsdao.wtf/img/nounspreview.png"
         />
-        <meta property="og:url" content={"https://comicsdao.wtf"} />
+        <meta property="og:url" content={"https://comicsdao.wtf/nouns"} />
         <meta property="og:locale" content={"en"} />
         <meta property="og:type" content="website" />
         <meta name="twitter:card" content="summary" />
