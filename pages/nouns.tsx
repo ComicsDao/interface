@@ -168,7 +168,7 @@ const Home: NextPage = ({ comics }: any) => {
             <h2 className="absolute z-10 text-sm -bottom-1 right-2 text-black-100 font-ubuntu">
               Powered by ComicsDAO
             </h2>
-            <div className="absolute opacity-0 -top-10 right-3/4 lg:top-[-30px] lg:right-[60px] cards-box lg:pt-6 xl:pt-0 ">
+            <div className="absolute opacity-0 -top-10 right-[30px] lg:top-[-30px] lg:right-[60px] cards-box lg:pt-6 xl:pt-0 ">
               <div className="absolute animated-card-1 left-[-35px] top-[-10px] w-[160px] rotate-[20deg]">
                 <Image src={pinkComic} alt="comics illustration" />
               </div>
