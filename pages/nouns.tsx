@@ -5,7 +5,7 @@ import React, { useEffect, useState } from "react"
 import { timeline } from "motion"
 import { TimelineDefinition } from "@motionone/dom/types/timeline/types"
 import arrow from "public/img/icon/arrow.svg"
-import Image from "next/image"
+import Image from "next/future/image"
 import { NavbarNouns } from "../components/shared"
 import { fetchAPI } from "../lib/api"
 import pinkComic from "public/img/pink.png"
@@ -52,33 +52,67 @@ const Home: NextPage = ({ comics }: any) => {
       [".comics-text", { transform: "scale(1)" }, { delay: 0.4 }],
       [".cards-box", { opacity: 1 }],
       [".arrow-box", { opacity: 1 }],
-      [
-        ".cards-box",
-        { right: "90px", top: "-5px" },
-        { at: 3.4, duration: 0.4 }
-      ],
+      // [
+      //   ".cards-box",
+      //   { right: "90px", top: "-5px" },
+      //   { at: 3.4, duration: 0.4 }
+      // ],
       [
         ".animated-card-1",
         {
-          width: "220px",
-          height: "260px",
-          transform: "rotate(-12deg) translate(-85px, 45px)"
+          transform: "rotate(-10deg) translate(-5px, -5px)"
         },
         { at: 3.4, duration: 0.4 }
       ],
       [
         ".animated-card-2",
         {
-          width: "220px",
-          height: "260px",
-          transform: "rotate(11deg) translate(-30px, 23px)"
+          transform: "rotate(5deg) translate(-10px, 0px)"
         },
         { at: 3.4, duration: 0.4 }
       ],
       [
         ".animated-card-3",
-        { width: "220px", height: "260px", transform: "rotate(28deg)" },
+        { transform: "rotate(20deg)" },
         { at: 3.4, duration: 0.4 }
+      ],
+      [
+        ".animated-card-1",
+        {
+          transform: "rotate(-12deg) translate(-5px, -5px)"
+        },
+        { at: 3.8, duration: 0.2 }
+      ],
+      [
+        ".animated-card-2",
+        {
+          transform: "rotate(7deg) translate(-10px, 0px)"
+        },
+        { at: 3.8, duration: 0.2 }
+      ],
+      [
+        ".animated-card-3",
+        { transform: "rotate(18deg)" },
+        { at: 3.8, duration: 0.2 }
+      ],
+      [
+        ".animated-card-1",
+        {
+          transform: "rotate(-10deg) translate(-5px, -5px)"
+        },
+        { at: 4.0, duration: 0.2 }
+      ],
+      [
+        ".animated-card-2",
+        {
+          transform: "rotate(5deg) translate(-10px, 0px)"
+        },
+        { at: 4.0, duration: 0.2 }
+      ],
+      [
+        ".animated-card-3",
+        { transform: "rotate(20deg)" },
+        { at: 4.0, duration: 0.2 }
       ],
       [".main-animation-box", { zIndex: "-10" }]
     ] as TimelineDefinition
@@ -134,19 +168,16 @@ const Home: NextPage = ({ comics }: any) => {
             <h2 className="absolute z-10 text-sm -bottom-1 right-2 text-black-100 font-ubuntu">
               Powered by ComicsDAO
             </h2>
-            <div className="absolute opacity-0 -top-10 right-3/4 lg:top-[-50px] lg:right-[78px] cards-box lg:pt-6 xl:pt-0 ">
-              {/* <div className="absolute animated-card-1 top-[-60px]">
+            <div className="absolute opacity-0 -top-10 right-3/4 lg:top-[-30px] lg:right-[60px] cards-box lg:pt-6 xl:pt-0 ">
+              <div className="absolute animated-card-1 left-[-35px] top-[-10px] w-[160px] rotate-[20deg]">
                 <Image src={pinkComic} alt="comics illustration" />
               </div>
-              <div className="absolute animated-card-2 left-3 top-[-60px] ">
+              <div className="absolute animated-card-2 left-1 top-[-10px] w-[160px] rotate-[-32deg]">
                 <Image src={yellowComic} alt="comics illustration" />
               </div>
-              <div className="absolute animated-card-3 left-6 top-[-60px]">
+              <div className="absolute animated-card-3 left-6 top-[-5px] w-[160px] rotate-[35deg]">
                 <Image src={orangeComic} alt="comics illustration" />
-              </div> */}
-              <div className="absolute rounded-lg animated-card-1 w-[80px] h-[95px] lg:w-[220px] lg:h-[265px] border-4 border-solid border-black-100 bg-red"></div>
-              <div className="absolute rounded-lg animated-card-2 left-3 w-[80px] h-[95px] lg:w-[220px] lg:h-[265px] bg-yellow-200 border-4 border-solid border-black-100"></div>
-              <div className="absolute rounded-lg animated-card-3 left-6 w-[80px] h-[95px] lg:w-[220px] lg:h-[265px] border-4 border-solid border-black-100 bg-orange"></div>
+              </div>
             </div>
           </div>
         </main>

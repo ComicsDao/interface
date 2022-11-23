@@ -86,7 +86,7 @@ const Home: NextPage = () => {
             </a>
             <a
               href="https://twitter.com/ComicsDAO"
-              className={`font-ubuntu font-normal text-lg  flex items-center relative p-2 w-full ${style.link_after_home}`}
+              className={`font-ubuntu font-normal text-lg flex items-center relative p-2 w-full ${style.link_after_home}`}
             >
               <div className="mr-3">
                 <Image src={twitter} alt="notion icon" height={50} width={50} />
