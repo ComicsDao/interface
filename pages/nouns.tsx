@@ -1,7 +1,7 @@
 import type { NextPage } from "next"
 import Head from "next/head"
 import { DoubleText, NounsSection } from "../components/ui"
-import React, { useEffect, useState } from "react"
+import React, { useEffect } from "react"
 import { timeline } from "motion"
 import { TimelineDefinition } from "@motionone/dom/types/timeline/types"
 import arrow from "public/img/icon/arrow.svg"
